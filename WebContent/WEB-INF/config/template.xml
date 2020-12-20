@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+ 	<!-- ADMIN TEMPLATE -->
+	<definition name="bookstore.admin.template" template="/WEB-INF/templates/admin/template.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+	    <put-attribute name="left-bar" value="/WEB-INF/templates/admin/left-bar.jsp" />
+	    <put-attribute name="main" value="" />
+	    <put-attribute name="footer" value="/WEB-INF/templates/admin/footer.jsp" />
+	</definition>
+	
+  	<definition name="bookstore.admin.index.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/index/index.jsp" />
+	</definition>
+	
+	<!-- ADMIN TOTAL INCOME -->
+	<definition name="bookstore.admin.total.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/total/index.jsp" />
+	</definition>
+	<!-- END ADMIN TOTAL INCOME -->
+	
+	<!-- ADMIN BILL -->
+	<definition name="bookstore.admin.bill.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/bill/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.bill.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/bill/search.jsp" />
+	</definition><definition name="bookstore.admin.bill.detail" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/bill/detail.jsp" />
+	</definition>
+	<!-- END ADMIN BILL -->
+	
+	<!-- ADMIN CATEGORY -->
+	<definition name="bookstore.admin.cat.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.cat.add" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/add.jsp" />
+	</definition>
+	<definition name="bookstore.admin.cat.edit" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/edit.jsp" />
+	</definition>
+	<definition name="bookstore.admin.cat.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/search.jsp" />
+	</definition>
+	<!-- END ADMIN CATEGORY -->
+	
+	<!-- ADMIN BOOK -->
+	<definition name="bookstore.admin.book.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/book/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.book.add" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/book/add.jsp" />
+	</definition>
+	<definition name="bookstore.admin.book.edit" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/book/edit.jsp" />
+	</definition>
+	<definition name="bookstore.admin.book.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/book/search.jsp" />
+	</definition>
+	<definition name="bookstore.admin.book.detail" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/book/detail.jsp" />
+	</definition>
+	<!-- END ADMIN BOOK -->
+	
+	<!-- ADMIN BLOG -->
+	<definition name="bookstore.admin.blog.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/blog/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.blog.add" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/blog/add.jsp" />
+	</definition>
+	<definition name="bookstore.admin.blog.edit" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/blog/edit.jsp" />
+	</definition>
+	<definition name="bookstore.admin.blog.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/blog/search.jsp" />
+	</definition>
+	<definition name="bookstore.admin.blog.detail" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/blog/detail.jsp" />
+	</definition>
+	<!-- END ADMIN BOOK -->
+	
+	<!-- ADMIN COMMENT -->
+	<definition name="bookstore.admin.comment.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/comment/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.comment.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/comment/search.jsp" />
+	</definition>
+	<!-- END ADMIN COMMENT -->
+	
+	<!-- ADMIN USER -->
+	<definition name="bookstore.admin.user.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.user.add" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/add.jsp" />
+	</definition>
+	<definition name="bookstore.admin.user.edit" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/edit.jsp" />
+	</definition>
+	<definition name="bookstore.admin.user.search" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/search.jsp" />
+	</definition>
+	<definition name="bookstore.admin.user.profile" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/profile.jsp" />
+	</definition>
+	<!-- END ADMIN USER -->
+	
+	<!-- ADMIN SLIDE -->
+	<definition name="bookstore.admin.slide.index" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/index.jsp" />
+	</definition>
+	<definition name="bookstore.admin.slide.add" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/add.jsp" />
+	</definition>
+	<definition name="bookstore.admin.slide.edit" extends="bookstore.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/edit.jsp" />
+	</definition>
+	<!-- END ADMIN SLIDE -->
+	
+   <!--END ADMIN TEMPLATE -->
+   
+   <!-- PUBLIC TEMPLATE 1 -->
+	<definition name="bookstore.public.template1" template="/WEB-INF/templates/public/template1.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+	    <put-attribute name="main" value="" />
+	    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+	
+  	<definition name="bookstore.public.index.index" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/index.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.cart" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/cart.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.check" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/check.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.favorite" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/favorite.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.contact" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/contact.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.login" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/login.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.productDetail" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/productDetail.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.product" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/product.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.search" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/search.jsp" />
+	</definition>
+	
+	<definition name="bookstore.public.index.about" extends="bookstore.public.template1">
+    	<put-attribute name="main" value="/WEB-INF/views/public/about.jsp" />
+	</definition>
+  <!--END PUBLIC TEMPLATE 1 -->
+  
+  <!-- PUBLIC TEMPLATE 2 HAVE RIGHT BAR -->
+	<definition name="bookstore.public.template2" template="/WEB-INF/templates/public/template2.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+	    <put-attribute name="main" value="" />
+	    <put-attribute name="right-bar" value="/WEB-INF/templates/public/right-bar.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+	
+	<!-- BLOG -->
+  	<definition name="bookstore.public.index.blog" extends="bookstore.public.template2">
+    	<put-attribute name="main" value="/WEB-INF/views/public/blog.jsp" />
+	</definition>
+  <!--END PUBLIC TEMPLATE 2 -->
+  
+  <!-- Login TEMPLATE -->
+	<definition name="bookstore.login.template" template="/WEB-INF/templates/admin/template.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+	    <put-attribute name="main" value="" />
+	</definition>
+	
+</tiles-definitions>

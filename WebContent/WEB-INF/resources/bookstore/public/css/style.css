@@ -1,0 +1,106 @@
+.search-button {
+	border: solid #aaaaaa 1px;
+    width: 100px;
+}
+
+.total {
+	
+}
+
+.reply {
+	position: relative;
+	left: 15px;
+	top: -24px;
+}
+
+.cmt-reply {
+	position: relative;
+	z-index: 1;
+	top: -68px;
+}
+
+.area-cmt {
+	padding-top: 60px;
+}
+
+.time-cmt {
+	position: relative;
+	top: -20px;
+	left: 15px;
+	font-size: 12px;
+}
+
+#contentcmt {
+	padding-left: 15px;
+	font-size: 16px;
+}
+
+#usercmt {
+	font-weight: bolder;
+	font-style: italic;
+}
+
+#content-error {
+	position: relative;
+	top: 25px;
+	left: 172px;
+	color: red;
+}
+
+#searchproduct-error {
+	color: red;
+	position: fixed;
+	left: 300px
+}
+
+#username-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+#fullname-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+#password-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+#email-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+#address-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+#phone-error {
+	color: red;
+	position: relative;
+	width: 250px;
+	left: 600px;
+	top: -35px;
+}
+
+.d-2 {
+	padding-left: 15px;
+}

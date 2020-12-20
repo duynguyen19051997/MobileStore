@@ -1,0 +1,103 @@
+#left {
+	float: left;
+}
+
+#right {
+	float: right;
+}
+
+.clr {
+	padding-top: 10px;
+	clear: both;
+}
+
+#submit {
+	text-align: center;
+}
+
+#imgage {
+	position: relative;
+	padding-bottom: 20px;
+}
+
+#login {
+	background-color: white !important;
+}
+
+#search-error {
+	position: absolute;
+	top: -20px;
+	color: red;
+}
+
+#fname-error {
+	color: red;
+}
+
+#detail-error {
+	color: red;
+}
+
+#picture-error {
+	color: red;
+}
+
+#sort-error {
+	color: red;
+}
+
+#bname-error {
+	color: red;
+}
+
+#price-error {
+	color: red;
+}
+
+#avatar-error {
+	color: red;
+}
+
+#decription-error {
+	color: red;
+}
+
+#password-error {
+	color: red;
+}
+
+#username-error {
+	color: red;
+}
+
+#fullname-error {
+	color: red;
+}
+
+#email-error {
+	color: red;
+}
+
+#address-error {
+	color: red;
+}
+
+#phone-error {
+	color: red;
+}
+
+#box {
+	float: left;
+}
+
+#d2 {
+	height: 650px;
+}
+
+.d1 {
+	text-align: center;
+}
+
+.border-top {
+	padding-top: 10px;
+}
