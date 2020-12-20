@@ -1,7 +1,7 @@
-<%@page import="vn.edu.vinaenter.constant.Defines"%>
-<%@page import="vn.edu.vinaenter.model.dao.BookDAO"%>
-<%@page import="vn.edu.vinaenter.model.dao.CategoryDAO"%>
-<%@page import="vn.edu.vinaenter.util.SlugUtil"%>
+<%@page import="duynguyen.constant.Defines"%>
+<%@page import="duynguyen.model.dao.BookDAO"%>
+<%@page import="duynguyen.model.dao.CategoryDAO"%>
+<%@page import="duynguyen.util.SlugUtil"%>
 <%@page import="com.sun.corba.se.spi.ior.MakeImmutable"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

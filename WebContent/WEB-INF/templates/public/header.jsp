@@ -1,10 +1,10 @@
-<%@page import="vn.edu.vinaenter.model.bean.Book"%>
-<%@page import="vn.edu.vinaenter.model.dao.BookDAO"%>
-<%@page import="vn.edu.vinaenter.util.ActionCart"%>
+<%@page import="duynguyen.model.bean.Book"%>
+<%@page import="duynguyen.model.dao.BookDAO"%>
+<%@page import="duynguyen.util.ActionCart"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="vn.edu.vinaenter.model.bean.Item"%>
+<%@page import="duynguyen.model.bean.Item"%>
 <%@page import="java.util.List"%>
-<%@page import="vn.edu.vinaenter.util.SlugUtil"%>
+<%@page import="duynguyen.util.SlugUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/templates/taglib.jsp"%>

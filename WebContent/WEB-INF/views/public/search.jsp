@@ -1,4 +1,4 @@
-<%@page import="vn.edu.vinaenter.util.SlugUtil"%>
+<%@page import="duynguyen.util.SlugUtil"%>
 <%@page import="com.sun.corba.se.spi.ior.MakeImmutable"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

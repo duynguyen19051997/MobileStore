@@ -19,7 +19,7 @@
 	<mvc:resources location="/WEB-INF/" mapping="/pathUrl/**"></mvc:resources>
 	<!-- Scan package controller -->
     <!-- <context:component-scan base-package="vn.edu.vinaenter.controller, vn.edu.vinaenter.model.dao, vn.edu.vinaenter.common"/> -->
-    <context:component-scan base-package="vn.edu.vinaenter.*"></context:component-scan>
+    <context:component-scan base-package="duynguyen.*"></context:component-scan>
     
     <mvc:interceptors>
 	    <mvc:interceptor>
@@ -27,7 +27,7 @@
 		      <mvc:mapping path="/cat" />
 		      <mvc:mapping path="/single" />
 		      <mvc:mapping path="/contact" />
-	        <bean id="listCategoryInterceptor" class="vn.edu.vinaenter.interceptor.ListCategoryInterceptor"/>
+	        <bean id="listCategoryInterceptor" class="duynguyen.interceptor.ListCategoryInterceptor"/>
 	    </mvc:interceptor>
 	</mvc:interceptors>
 </beans>
