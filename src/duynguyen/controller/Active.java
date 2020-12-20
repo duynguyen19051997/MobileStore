@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CommentDAO;
 import duynguyen.model.dao.UserDao;
 
@@ -17,7 +17,7 @@ public class Active {
 	private UserDao userDao;
 	
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 	
 	@Autowired
 	private CommentDAO cmtDao;

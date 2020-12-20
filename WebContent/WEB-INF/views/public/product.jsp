@@ -1,5 +1,5 @@
 <%@page import="duynguyen.constant.Defines"%>
-<%@page import="duynguyen.model.dao.BookDAO"%>
+<%@page import="duynguyen.model.dao.ProductDAO"%>
 <%@page import="duynguyen.model.dao.CategoryDAO"%>
 <%@page import="duynguyen.util.SlugUtil"%>
 <%@page import="com.sun.corba.se.spi.ior.MakeImmutable"%>

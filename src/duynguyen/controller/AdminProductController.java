@@ -25,20 +25,20 @@ import duynguyen.constant.Defines;
 import duynguyen.model.bean.Book;
 import duynguyen.model.bean.Category;
 import duynguyen.model.bean.User;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CategoryDAO;
 import duynguyen.model.dao.UserDao;
 import duynguyen.util.FileUtil;
 
 @Controller
 @RequestMapping("admin/product")
-public class AdminBookController {
+public class AdminProductController {
 
 	@Autowired
 	private ServletContext context;
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@Autowired
 	private CategoryDAO catDao;

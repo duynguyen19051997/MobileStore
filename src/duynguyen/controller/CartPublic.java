@@ -19,14 +19,14 @@ import duynguyen.model.bean.Item;
 import duynguyen.model.bean.User;
 import duynguyen.model.dao.BillDao;
 import duynguyen.model.dao.BillDetailDao;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.util.ActionCart;
 
 @Controller
 public class CartPublic {
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@Autowired
 	private BillDao billDao;

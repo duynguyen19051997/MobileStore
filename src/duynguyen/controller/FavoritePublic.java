@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import duynguyen.model.bean.Book;
 import duynguyen.model.bean.Item;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.util.ActionCart;
 
 @Controller
 public class FavoritePublic {
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@PostMapping("addfavorite")
 	public @ResponseBody int addFavorite(@RequestParam("aIdPro") int bid, HttpSession session) {

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import duynguyen.model.bean.Book;
 
 @Repository
-public class BookDAO {
+public class ProductDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 

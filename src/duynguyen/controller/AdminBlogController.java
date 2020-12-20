@@ -27,7 +27,7 @@ import duynguyen.model.bean.Book;
 import duynguyen.model.bean.Category;
 import duynguyen.model.bean.User;
 import duynguyen.model.dao.BlogDAO;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CategoryDAO;
 import duynguyen.model.dao.UserDao;
 import duynguyen.util.FileUtil;
@@ -40,7 +40,7 @@ public class AdminBlogController {
 	private ServletContext context;
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@Autowired
 	private BlogDAO blogDao;

@@ -1,5 +1,5 @@
 <%@page import="duynguyen.model.bean.Book"%>
-<%@page import="duynguyen.model.dao.BookDAO"%>
+<%@page import="duynguyen.model.dao.ProductDAO"%>
 <%@page import="duynguyen.util.ActionCart"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="duynguyen.model.bean.Item"%>

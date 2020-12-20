@@ -25,7 +25,7 @@ import duynguyen.model.bean.Comment;
 import duynguyen.model.bean.Item;
 import duynguyen.model.bean.Slide;
 import duynguyen.model.bean.User;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CategoryDAO;
 import duynguyen.model.dao.CommentDAO;
 import duynguyen.model.dao.SlideDao;
@@ -51,7 +51,7 @@ public class PublicIndexController {
 	private SlideDao slideDao;
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@ModelAttribute
 	public void commonObject(ModelMap modelMap) {

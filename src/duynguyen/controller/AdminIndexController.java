@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import duynguyen.model.bean.User;
 import duynguyen.model.dao.BillDao;
-import duynguyen.model.dao.BookDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CategoryDAO;
 import duynguyen.model.dao.CommentDAO;
 import duynguyen.model.dao.SlideDao;
@@ -27,7 +27,7 @@ public class AdminIndexController {
 	private UserDao userDao;
 
 	@Autowired
-	private BookDAO bookDao;
+	private ProductDAO bookDao;
 
 	@Autowired
 	private SlideDao slideDao;

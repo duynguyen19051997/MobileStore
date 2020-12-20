@@ -129,7 +129,6 @@ public class AdminBillController {
 			return "redirect:/admin/bill/index/" + currentPage;
 		}
 		modelMap.addAttribute("listDetaiBill", listDetaiBill);
-		System.out.println(listDetaiBill.size());
 		modelMap.addAttribute("objBill", objBill);
 		return "bookstore.admin.bill.detail";
 	}
