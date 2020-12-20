@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import duynguyen.model.bean.Book;
+import duynguyen.model.bean.Product;
 
 @Repository
 public class ProductDAO {
@@ -45,47 +45,47 @@ public class ProductDAO {
 		return jdbcTemplate.queryForObject(TOTAL_PRODUCT_BY_PARENT_ID_PUBLIC, new Object[] { cid }, Integer.class);
 	}
 
-	public List<Book> getItemsCountView(int offset, int rowcount) {
+	public List<Product> getItemsCountView(int offset, int rowcount) {
 		return jdbcTemplate.query(FIND_ALL_BY_COUNT_VIEW, new Object[] { offset, rowcount },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
 	public int countView(int bid) {
 		return jdbcTemplate.update(COUNT_VIEW, new Object[] { bid });
 	}
 
-	public List<Book> getItemPublicByCidLQ(int bid, int cid, int offset, int rowCountPublic) {
+	public List<Product> getItemPublicByCidLQ(int bid, int cid, int offset, int rowCountPublic) {
 		return jdbcTemplate.query(FIND_ALL_BY_CID_PUBLIC_LQ, new Object[] { cid, bid, offset, rowCountPublic },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
-	public List<Book> getItemPublicByCid(Integer cid, int offset, int rowCountPublic) {
+	public List<Product> getItemPublicByCid(Integer cid, int offset, int rowCountPublic) {
 		return jdbcTemplate.query(FIND_ALL_BY_CID_PUBLIC_PAGINATION, new Object[] { cid, offset, rowCountPublic },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
-	public List<Book> getItemsPublicByParentId(int cid, int offset, int rowCountPublic) {
+	public List<Product> getItemsPublicByParentId(int cid, int offset, int rowCountPublic) {
 		return jdbcTemplate.query(FIND_ALL_BY_PARENT_ID_PUBLIC_PAGINATION, new Object[] { cid, offset, rowCountPublic },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
-	public List<Book> getItemsPublicPagination(int offset, int rowCountPublic) {
+	public List<Product> getItemsPublicPagination(int offset, int rowCountPublic) {
 		return jdbcTemplate.query(FIND_ALL_PUBLIC_PAGINATION, new Object[] { offset, rowCountPublic },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
-	public List<Book> getItemsLasted(int offset, int rowcount) {
+	public List<Product> getItemsLasted(int offset, int rowcount) {
 		return jdbcTemplate.query(FIND_ALL_PAGINATION, new Object[] { offset, rowcount },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
 	public int updateActive(Integer id, int i) {
 		return jdbcTemplate.update(ACTIVE_BOOK, new Object[] { i, id });
 	}
 
-	public List<Book> getItemsBySearch(String search, int offset, int rowCount) {
+	public List<Product> getItemsBySearch(String search, int offset, int rowCount) {
 		return jdbcTemplate.query(FIND_ALL_BY_SEARCH_PAGINATION, new Object[] { "%" + search + "%", offset, rowCount },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
 	public int totalItemsBySearch(String search) {
@@ -96,22 +96,22 @@ public class ProductDAO {
 		return jdbcTemplate.update(DELETE_ONE, new Object[] { bid });
 	}
 
-	public int editItem(@Valid Book objPro) {
+	public int editItem(@Valid Product objPro) {
 		return jdbcTemplate.update(UPDATE_ONE,
 				new Object[] { objPro.getBname(), objPro.getDecription(), objPro.getDetail(), objPro.getPicture(),
 						objPro.getPrice(), objPro.getCreate_by(), objPro.getCid(), objPro.getBid() });
 	}
 
-	public Book getItemByBid(int bid) {
+	public Product getItemByBid(int bid) {
 		try {
 			return jdbcTemplate.queryForObject(FIND_ONE_BY_BID, new Object[] { bid },
-					new BeanPropertyRowMapper<Book>(Book.class));
+					new BeanPropertyRowMapper<Product>(Product.class));
 		} catch (Exception e) {
 			return null;
 		}
 	}
 
-	public int addItem(@Valid Book objPro) {
+	public int addItem(@Valid Product objPro) {
 		return jdbcTemplate.update(ADD_ITEM,
 				new Object[] { objPro.getBname(), objPro.getDecription(), objPro.getDetail(), objPro.getPicture(),
 						objPro.getCount_view(), objPro.getPrice(), objPro.getDiscount(), objPro.getCreate_by(),
@@ -130,9 +130,9 @@ public class ProductDAO {
 		return jdbcTemplate.queryForObject(TOTAL_BOOK, Integer.class);
 	}
 
-	public List<Book> getItems(int offset, int rowCount) {
+	public List<Product> getItems(int offset, int rowCount) {
 		return jdbcTemplate.query(FIND_ALL_PAGINATION, new Object[] { offset, rowCount },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
 	public int totalProductBySearchPublic(String search) {
@@ -148,24 +148,24 @@ public class ProductDAO {
 		return jdbcTemplate.queryForObject(TOTAL_BOOK_BY_CID, new Object[] { cid }, Integer.class);
 	}
 
-	public List<Book> getItemsByCid(Integer cid, int offset, int rowCount) {
+	public List<Product> getItemsByCid(Integer cid, int offset, int rowCount) {
 		return jdbcTemplate.query(FIND_ALL_BY_CID_PAGINATION, new Object[] { cid, offset, rowCount },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
-	public Book getItemByBidPublic(Integer bid) {
+	public Product getItemByBidPublic(Integer bid) {
 		try {
 			return jdbcTemplate.queryForObject(FIND_ONE_BY_BID_PUBLIC, new Object[] { bid },
-					new BeanPropertyRowMapper<Book>(Book.class));
+					new BeanPropertyRowMapper<Product>(Product.class));
 		} catch (Exception e) {
 			return null;
 		}
 	}
 
-	public List<Book> getItemsBySearchPaginationPublic(String search, int offset, int rowCountPublic) {
+	public List<Product> getItemsBySearchPaginationPublic(String search, int offset, int rowCountPublic) {
 		return jdbcTemplate.query(FIND_ALL_BY_SEARCH_PAGINATION_PUBLIC,
 				new Object[] { "%" + search + "%", offset, rowCountPublic },
-				new BeanPropertyRowMapper<Book>(Book.class));
+				new BeanPropertyRowMapper<Product>(Product.class));
 	}
 
 }

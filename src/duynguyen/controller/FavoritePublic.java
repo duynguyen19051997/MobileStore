@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import duynguyen.model.bean.Book;
+import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Item;
 import duynguyen.model.dao.ProductDAO;
 import duynguyen.util.ActionCart;
@@ -24,7 +24,7 @@ public class FavoritePublic {
 
 	@PostMapping("addfavorite")
 	public @ResponseBody int addFavorite(@RequestParam("aIdPro") int bid, HttpSession session) {
-		Book objPro = bookDao.getItemByBidPublic(bid);
+		Product objPro = bookDao.getItemByBidPublic(bid);
 		if (objPro == null) {
 			return 0;
 		}

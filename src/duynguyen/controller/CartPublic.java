@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import duynguyen.model.bean.Book;
+import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Item;
 import duynguyen.model.bean.User;
 import duynguyen.model.dao.BillDao;
@@ -40,7 +40,7 @@ public class CartPublic {
 		if (quantity == null) {
 			quantity = 1;
 		}
-		Book objPro = bookDao.getItemByBidPublic(bid);
+		Product objPro = bookDao.getItemByBidPublic(bid);
 		if (objPro == null) {
 			return 0;
 		}

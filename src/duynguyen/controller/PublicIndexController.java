@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import duynguyen.constant.Defines;
-import duynguyen.model.bean.Book;
+import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Category;
 import duynguyen.model.bean.Comment;
 import duynguyen.model.bean.Item;
@@ -64,8 +64,8 @@ public class PublicIndexController {
 	@GetMapping("")
 	public String index(ModelMap modelMap) {
 		List<Slide> listSlide = slideDao.getItem();
-		List<Book> listProLast = bookDao.getItemsLasted(0, Defines.ROW_COUNT_PUBLIC_INDEX);
-		List<Book> listProCountView = bookDao.getItemsCountView(0, Defines.ROW_COUNT_PUBLIC_INDEX);
+		List<Product> listProLast = bookDao.getItemsLasted(0, Defines.ROW_COUNT_PUBLIC_INDEX);
+		List<Product> listProCountView = bookDao.getItemsCountView(0, Defines.ROW_COUNT_PUBLIC_INDEX);
 		modelMap.addAttribute("listProLast", listProLast);
 		modelMap.addAttribute("listSlide", listSlide);
 		modelMap.addAttribute("listProCountView", listProCountView);
@@ -87,14 +87,14 @@ public class PublicIndexController {
 				if (objCat.getParent_id() == 0) {
 					totalPro = bookDao.totalProductPublicByParent(objCat.getCid());
 					int offset = (currentPage - 1) * Defines.ROW_COUNT_PUBLIC;
-					List<Book> listProPublic = bookDao.getItemsPublicByParentId(objCat.getCid(), offset,
+					List<Product> listProPublic = bookDao.getItemsPublicByParentId(objCat.getCid(), offset,
 							Defines.ROW_COUNT_PUBLIC);
 					modelMap.addAttribute("listProPublic", listProPublic);
 					modelMap.addAttribute("totalProduct", totalPro);
 				} else {
 					totalPro = bookDao.totalBookByCidPublic(cid);
 					int offset = (currentPage - 1) * Defines.ROW_COUNT_PUBLIC;
-					List<Book> listProPublic = bookDao.getItemPublicByCid(cid, offset, Defines.ROW_COUNT_PUBLIC);
+					List<Product> listProPublic = bookDao.getItemPublicByCid(cid, offset, Defines.ROW_COUNT_PUBLIC);
 					modelMap.addAttribute("listProPublic", listProPublic);
 					modelMap.addAttribute("totalProduct", totalPro);
 				}
@@ -104,7 +104,7 @@ public class PublicIndexController {
 		} else {
 			totalPro = bookDao.totalProductPublic();
 			int offset = (currentPage - 1) * Defines.ROW_COUNT_PUBLIC;
-			List<Book> listProPublic = bookDao.getItemsPublicPagination(offset, Defines.ROW_COUNT_PUBLIC);
+			List<Product> listProPublic = bookDao.getItemsPublicPagination(offset, Defines.ROW_COUNT_PUBLIC);
 			modelMap.addAttribute("listProPublic", listProPublic);
 			modelMap.addAttribute("totalProduct", totalPro);
 		}
@@ -132,7 +132,7 @@ public class PublicIndexController {
 			currentPage = numberOfPage;
 		}
 		int offset = (currentPage - 1) * Defines.ROW_COUNT_PUBLIC;
-		List<Book> listSearch = bookDao.getItemsBySearchPaginationPublic(search, offset, Defines.ROW_COUNT_PUBLIC);
+		List<Product> listSearch = bookDao.getItemsBySearchPaginationPublic(search, offset, Defines.ROW_COUNT_PUBLIC);
 		modelMap.addAttribute("search", search);
 		modelMap.addAttribute("currentPage", currentPage);
 		modelMap.addAttribute("numberOfPage", numberOfPage);
@@ -143,7 +143,7 @@ public class PublicIndexController {
 	@GetMapping("{cname}/{cid}/{name}/{bid}.html")
 	public String productDetail(ModelMap modelMap, @PathVariable(name = "bid", required = false) Integer bid,
 			@PathVariable(name = "cid", required = false) Integer cid, RedirectAttributes ra) {
-		Book objPro = bookDao.getItemByBidPublic(bid);
+		Product objPro = bookDao.getItemByBidPublic(bid);
 		Category objCat = catDao.getItemByCid(cid);
 		if (objCat != null) {
 			Category objCatParent = catDao.getItemByCid(objCat.getParent_id());
@@ -162,7 +162,7 @@ public class PublicIndexController {
 			}
 			int totalCmt = cmtDao.totalCmtByBidPublic(bid);
 			List<Comment> listComment = cmtDao.getItemsByBidPublic(bid);
-			List<Book> listProLQ = bookDao.getItemPublicByCidLQ(objPro.getBid(), objPro.getCid(), 0, 8);
+			List<Product> listProLQ = bookDao.getItemPublicByCidLQ(objPro.getBid(), objPro.getCid(), 0, 8);
 			modelMap.addAttribute("objPro", objPro);
 			modelMap.addAttribute("listProLQ", listProLQ);
 			modelMap.addAttribute("listComment", listComment);

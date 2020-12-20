@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import javax.validation.constraints.NotEmpty;
 
-public class Book {
+public class Product {
 	private int bid;
 	private int count_view;
 	private int cid;
@@ -132,11 +132,11 @@ public class Book {
 		this.date_create = date_create;
 	}
 
-	public Book() {
+	public Product() {
 		super();
 	}
 
-	public Book(int bid, int count_view, int cid, int enable, double price, double discount, String bname,
+	public Product(int bid, int count_view, int cid, int enable, double price, double discount, String bname,
 			String decription, String picture, String create_by, String detail, String cname, Timestamp date_create) {
 		super();
 		this.bid = bid;

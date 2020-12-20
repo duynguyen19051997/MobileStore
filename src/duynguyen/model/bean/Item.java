@@ -2,14 +2,14 @@ package duynguyen.model.bean;
 
 public class Item {
 
-	private Book product;
+	private Product product;
 	private int quantity;
 
-	public Book getProduct() {
+	public Product getProduct() {
 		return product;
 	}
 
-	public void setProduct(Book product) {
+	public void setProduct(Product product) {
 		this.product = product;
 	}
 
@@ -21,7 +21,7 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	public Item(Book product, int quantity) {
+	public Item(Product product, int quantity) {
 		super();
 		this.product = product;
 		this.quantity = quantity;

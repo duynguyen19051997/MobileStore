@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import duynguyen.constant.Defines;
 import duynguyen.model.bean.Blog;
-import duynguyen.model.bean.Book;
+import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Category;
 import duynguyen.model.bean.User;
 import duynguyen.model.dao.BlogDAO;
@@ -95,7 +95,7 @@ public class AdminBlogController {
 	}
 
 	@PostMapping("add")
-	public String add(@Valid @ModelAttribute("objPro") Book objPro, BindingResult br,
+	public String add(@Valid @ModelAttribute("objPro") Product objPro, BindingResult br,
 			@RequestParam("avatar") CommonsMultipartFile cmf, RedirectAttributes ra, Principal principal) {
 		if (br.hasErrors()) {
 			return "bookstore.admin.book.add";
@@ -133,7 +133,7 @@ public class AdminBlogController {
 	@GetMapping("edit/{bid}/{page}")
 	public String edit(@PathVariable("bid") int bid, ModelMap modelMap,
 			@PathVariable(name = "page", required = false) Integer page, RedirectAttributes ra) {
-		Book objPro = bookDao.getItemByBid(bid);
+		Product objPro = bookDao.getItemByBid(bid);
 		if (objPro == null) {
 			ra.addFlashAttribute("msg", Defines.MSG_ERROR_ID);
 			return "redirect:/admin/product/index/1";
@@ -159,13 +159,13 @@ public class AdminBlogController {
 	}
 
 	@PostMapping("edit/{bid}/{page}")
-	public String edit(@PathVariable("bid") int bid, @Valid @ModelAttribute("objPro") Book objPro, BindingResult br,
+	public String edit(@PathVariable("bid") int bid, @Valid @ModelAttribute("objPro") Product objPro, BindingResult br,
 			@PathVariable(name = "page", required = false) Integer page,
 			@RequestParam("avatar") CommonsMultipartFile cmf, RedirectAttributes ra, Principal principal) {
 		if (br.hasErrors()) {
 			return "bookstore.admin.book.edit";
 		}
-		Book objOldPro = bookDao.getItemByBid(bid);
+		Product objOldPro = bookDao.getItemByBid(bid);
 		String fileName = FileUtil.rename(cmf.getOriginalFilename());
 		objPro.setCreate_by(principal.getName());
 		if (!"".equals(fileName)) {
@@ -205,7 +205,7 @@ public class AdminBlogController {
 	@GetMapping("delete/{bid}/{page}")
 	public String delete(@PathVariable(name = "bid", required = false) Integer bid,
 			@PathVariable(name = "page", required = false) Integer page, RedirectAttributes ra) {
-		Book objPro = bookDao.getItemByBid(bid);
+		Product objPro = bookDao.getItemByBid(bid);
 		if (objPro == null) {
 			ra.addFlashAttribute("msg", Defines.MSG_ERROR_ID);
 			return "redirect:/admin/product/index/" + page;
@@ -247,7 +247,7 @@ public class AdminBlogController {
 			return "redirect:/admin/product/search/" + numberOfPage + "?search=" + search;
 		}
 		int offset = (currentPage - 1) * Defines.ROW_COUNT;
-		List<Book> listPro = bookDao.getItemsBySearch(search, offset, Defines.ROW_COUNT);
+		List<Product> listPro = bookDao.getItemsBySearch(search, offset, Defines.ROW_COUNT);
 		modelMap.addAttribute("numberOfPage", numberOfPage);
 		modelMap.addAttribute("currentPage", currentPage);
 		modelMap.addAttribute("listPro", listPro);
@@ -257,7 +257,7 @@ public class AdminBlogController {
 
 	@GetMapping("detail/{bid}")
 	public String detail(@PathVariable("bid") int bid, ModelMap modelMap, RedirectAttributes ra) {
-		Book objPro = bookDao.getItemByBid(bid);
+		Product objPro = bookDao.getItemByBid(bid);
 		try {
 			if (objPro == null) {
 				ra.addFlashAttribute("msg", Defines.MSG_ERROR_ID);

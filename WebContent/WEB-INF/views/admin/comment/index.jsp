@@ -118,7 +118,7 @@
 		                                                </td>
 		                                                <td class="d1">${objCmt.date_create}</td>
 		                                                <td class="d1">
-		                                                	<a href="${pageContext.request.contextPath}/admin/book/detail/${objCmt.bid}" title="Detail">${objCmt.bname}</a>
+		                                                	<a href="${pageContext.request.contextPath}/admin/product/detail/${objCmt.bid}" title="Detail">${objCmt.bname}</a>
 		                                                </td>
 		                                                <td class="d1">
 		                                                	<a href="${pageContext.request.contextPath}/admin/user/profile/${objCmt.id}" title="Detail">${objCmt.username}</a>
