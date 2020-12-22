@@ -22,10 +22,10 @@ public class BillDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	private static final String INSSERT_BILL = "INSERT INTO bills(user_id, status, total) VALUES (?,?,?)";
-	private static final String FIND_ALL_BY_PAGINATION = "SELECT b.bill_id, b.user_id, b.status, b.date_create, b.total, u.username FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id ORDER BY b.bill_id DESC LIMIT ?,?";
+	private static final String INSSERT_BILL = "INSERT INTO bills(user_id, status, total, deposits, rest_money, address, email, phone) VALUES (?,?,?,?,?,?,?,?)";
+	private static final String FIND_ALL_BY_PAGINATION = "SELECT b.bill_id, b.user_id, b.status, b.date_create, b.total, b.rest_money, b.deposits, b.email, b.phone, b.address, u.username FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id ORDER BY b.bill_id DESC LIMIT ?,?";
 	private static final String TOTAL_BILL = "SELECT COUNT(*) FROM bills";
-	private static final String FIND_ALL_BY_SEARCH_PAGINATION = "SELECT b.bill_id, b.user_id, b.status, b.date_create, b.total, u.username FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id WHERE u.username LIKE ? ORDER BY b.bill_id DESC LIMIT ?,?";
+	private static final String FIND_ALL_BY_SEARCH_PAGINATION = "SELECT b.bill_id, b.user_id, b.status, b.date_create, b.total, b.rest_money, b.deposits, b.email, b.phone, b.address, u.username FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id WHERE u.username LIKE ? ORDER BY b.bill_id DESC LIMIT ?,?";
 	private static final String TOTAL_BILL_BY_SEARCH = "SELECT COUNT(*) FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id WHERE u.username LIKE ?";
 	private static final String FIND_ONE_BY_BILL_ID = "SELECT b.bill_id, b.user_id, b.status, b.date_create, b.total, u.username FROM bills AS b INNER JOIN users AS u ON b.user_id = u.id WHERE b.bill_id = ?";
 	private static final String TOTAL_INCOME = "SELECT SUM(total) FROM bills";
@@ -61,7 +61,7 @@ public class BillDao {
 				new BeanPropertyRowMapper<Bill>(Bill.class));
 	}
 
-	public int addItemPublic(User infUser, float total) {
+	public int addItemPublic(User infUser, float total, String address, String email, String phone) {
 		PreparedStatementCreator psc = new PreparedStatementCreator() {
 			@Override
 			public java.sql.PreparedStatement createPreparedStatement(java.sql.Connection connection)
@@ -69,8 +69,13 @@ public class BillDao {
 				PreparedStatement ps = (PreparedStatement) connection.prepareStatement(INSSERT_BILL,
 						Statement.RETURN_GENERATED_KEYS);
 				ps.setInt(1, infUser.getId());
-				ps.setInt(2, 1);
+				ps.setInt(2, 0);
 				ps.setFloat(3, total);
+				ps.setFloat(4, (float) (total*0.1));
+				ps.setFloat(5, (float) (total*0.9));
+				ps.setString(6, address);
+				ps.setString(7, email);
+				ps.setString(8, phone);
 
 				return ps;
 			}

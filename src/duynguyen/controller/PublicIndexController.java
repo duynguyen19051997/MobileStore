@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import duynguyen.constant.Defines;
-import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Category;
 import duynguyen.model.bean.Comment;
 import duynguyen.model.bean.Item;
+import duynguyen.model.bean.Product;
 import duynguyen.model.bean.Slide;
 import duynguyen.model.bean.User;
-import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.CategoryDAO;
 import duynguyen.model.dao.CommentDAO;
+import duynguyen.model.dao.ProductDAO;
 import duynguyen.model.dao.SlideDao;
 import duynguyen.model.dao.UserDao;
 import duynguyen.util.ActionCart;
@@ -69,6 +69,7 @@ public class PublicIndexController {
 		modelMap.addAttribute("listProLast", listProLast);
 		modelMap.addAttribute("listSlide", listSlide);
 		modelMap.addAttribute("listProCountView", listProCountView);
+		
 		return "bookstore.public.index.index";
 	}
 
@@ -254,7 +255,7 @@ public class PublicIndexController {
 	public String favorite() {
 		return "bookstore.public.index.favorite";
 	}
-	
+
 	@GetMapping("blog.html")
 	public String blog() {
 		return "bookstore.public.index.blog";

@@ -113,7 +113,11 @@ public class CartPublic {
 	}
 
 	@PostMapping("checkout")
-	public @ResponseBody int checkOut(HttpSession session, HttpServletResponse response, HttpServletRequest request) {
+	public @ResponseBody int checkOut(HttpSession session, HttpServletResponse response, HttpServletRequest request,
+			@RequestParam(name = "aAddress", required = false) String address,
+			@RequestParam(name = "aEmail", required = false) String email,
+			@RequestParam(name = "aPhone", required = false) String phone
+			) {
 		@SuppressWarnings("unchecked")
 		List<Item> listCart = (ArrayList<Item>) session.getAttribute("listCart");
 		if (session.getAttribute("user") == null) {
@@ -124,10 +128,18 @@ public class CartPublic {
 			}
 		}
 		User infUser = (User) session.getAttribute("user");
+		if (address.isEmpty()) {
+			address =  infUser.getAddress();
+		}
+		if (phone.isEmpty()) {
+			phone =  infUser.getPhone();
+		}
+		if (email.isEmpty()) {
+			email =  infUser.getEmail();
+		}
 		if (listCart.size() > 0) {
 			float total = ActionCart.total(listCart);
-			int billId = billDao.addItemPublic(infUser, total);
-			System.out.println(billId);
+			int billId = billDao.addItemPublic(infUser, total, address, email, phone);
 			for (Item item : listCart) {
 				if (billDetaiDao.addItemPublic(item, billId) == 0) {
 					System.out.println("Có lỗi");

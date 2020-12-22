@@ -9,7 +9,11 @@
 			Thanh toán
 		</h2>
 	</section>
-
+	
+	<c:if test="${not empty user}">
+		<c:set var="user" value="${user}"></c:set>
+	</c:if>
+	
 	<!-- Cart -->
 	<section class="cart bgwhite p-t-70 p-b-100">
 		<div class="container">
@@ -46,7 +50,28 @@
 									</tr>
 								</c:forEach>
 								<tr class="table-row">
-									<td class="column-2" colspan="6" style="text-align: center;"><span style="font-weight: bolder;">Tổng tiền: ${Integer.valueOf(total)} VND </span></td>
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Tổng tiền:</span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><span style="font-weight: left;">${Integer.valueOf(total)} VND</span></td>
+								</tr>
+								<tr class="table-row">
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Đặt cọc:  </span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><span style="font-weight: left;">${Integer.valueOf(total * 0.1)} VND </span></td>
+								</tr>
+								<tr class="table-row">
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Còn lại: </span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><span style="font-weight: left;">${Integer.valueOf(total*0.9)} VND </span></td>
+								</tr>
+								<tr class="table-row">
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Số điện thoại:</span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><input type="text" name="" id="phone" value="${user.phone}"/></td>
+								</tr>
+								<tr class="table-row">
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Địa chỉ:</span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><input type="text" name="" id="address" value="${user.address}"/></td>
+								</tr>
+								<tr class="table-row">
+									<td class="column-2" colspan="3" style="text-align: center;"><span style="font-weight: bolder;">Email:</span></td>
+									<td class="column-2" colspan="3" style="text-align: left;"><input type="text" name="" id="email" value="${user.email}"/></td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -73,7 +98,7 @@
 					</span>
 
 					<span class="m-text21 w-size20 w-full-sm">
-						${Math.floor(Integer.valueOf(total) / 23200)} USD
+						${Math.floor(Integer.valueOf(total) * 0.1 / 23200)} USD
 					</span>
 				</div>
 
@@ -89,7 +114,7 @@
 			    <script>
 				    paypal.Buttons({
 			    	 createOrder: function(data, actions) {
-				    	  var dollar = ${Integer.valueOf(total)} / 23200;
+				    	  var dollar = ${Integer.valueOf(total)} * 0.1 / 23200;
 				          dollar = Math.floor(dollar);
 				          console.log(dollar);    
 				        return actions.order.create({
@@ -108,7 +133,9 @@
 				                type: 'POST',
 				                cache: false,
 				                data:{
-				                	
+				                	aAddress: $("#address").val(),
+				                	aEmail: $("#email").val(),
+				                	aPhone: $("#phone").val()
 				                },
 			                	success: function(data){
 				                 	$(function(){

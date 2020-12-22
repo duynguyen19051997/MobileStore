@@ -53,6 +53,9 @@ public class AdminBillController {
 			return "redirect:/admin/bill/index/1";
 		}
 		int totalBill = billDao.totalBill();
+		if (totalBill < 1) {
+			return "redirect:/admin/";
+		}
 		int numberOfPage = (int) Math.ceil((double) totalBill / Defines.ROW_COUNT);
 		if (currentPage > numberOfPage) {
 			ra.addFlashAttribute("msg", Defines.MSG_ERROR_PAGE);

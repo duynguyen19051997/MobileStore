@@ -72,22 +72,27 @@
                                                 <th class="d1">bill_id</th>
                                                 <th class="d1">Người mua</th>
                                                 <th class="d1">Status</th>
+                                                <th class="d1">Email</th>
+                                                <th class="d1">Địa chỉ</th>
+                                                <th class="d1">Số điện thoại</th>
+                                                <th class="d1">Đặt cọc</th>
+                                                <th class="d1">Còn lại</th>
                                                 <th class="d1">Ngày mua</th>
                                                 <th class="d1">Chi tiết</th>
-                                                <th class="d1">Thành tiền(VND)</th>
+                                                <th class="d1">Tổng tiền (VND)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         	<c:if test="${not empty listBill}">
                                         		<c:forEach items="${listBill}" var="objBill">
                                         			<c:set var="urlDel" value="${pageContext.request.contextPath}/admin/bill/delete/${objBill.bill_id}/${currentPage}"></c:set>
-		                                            <c:set var="urlDetail" value="#"></c:set>
+		                                            <c:set var="urlDetail" value="${pageContext.request.contextPath}/admin/bill/detail/${objBill.bill_id}/${currentPage}"></c:set>
 		                                            <c:set var="active" value="${pageContext.request.contextPath}/adminUrl/assets/images/active.png"></c:set>
 		                                            <c:set var="unactive" value="${pageContext.request.contextPath}/adminUrl/assets/images/unactive.png"></c:set>
 		                                            <tr>
 		                                                <td class="d1">${objBill.bill_id}</td>
 		                                                <td class="d1">
-		                                                	<a href="${pageContext.request.contextPath}/admin/user/profile/${objBill.user_id}" title="Detail">${objBill.username}</a>
+		                                                	<a href="${pageContext.request.contextPath}/admin/user/profile/${objBill.user_id}" title="Chi tiết">${objBill.username}</a>
 		                                                </td>
 		                                                <td class="d1">
 		                                                	<c:choose>
@@ -99,6 +104,11 @@
 		                                                		</c:otherwise>
 		                                                	</c:choose>
 		                                                </td>
+		                                                <th class="d1">${objBill.email}</th>
+		                                                <th class="d1">${objBill.address}</th>
+		                                                <th class="d1">${objBill.phone}</th>
+		                                                <th class="d1">${objBill.deposits}</th>
+		                                                <th class="d1">${objBill.rest_money}</th>
 		                                                <td class="d1">${objBill.date_create}</td>
 		                                                <td class="d1">
 		                                                	<a href="${urlDetail}" title="Chi tiết">Chi tiết</a>
@@ -109,7 +119,7 @@
                                             </c:if>
                                             <c:if test="${empty listBill}">
                                             	<tr>
-                                            		<td colspan="7" class="d1">Empty</td>
+                                            		<td colspan="7" class="d1">Nothing</td>
                                             	</tr>
                                             </c:if>
                                         </tbody>

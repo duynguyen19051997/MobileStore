@@ -72,6 +72,11 @@
                                                 <th class="d1">bill_id</th>
                                                 <th class="d1">Người mua</th>
                                                 <th class="d1">Status</th>
+                                                <th class="d1">Email</th>
+                                                <th class="d1">Địa chỉ</th>
+                                                <th class="d1">Số điện thoại</th>
+                                                <th class="d1">Đặt cọc (VND)</th>
+                                                <th class="d1">Còn lại (VND)</th>
                                                 <th class="d1">Ngày mua</th>
                                                 <th class="d1">Chi tiết</th>
                                                 <th class="d1">Tổng tiền (VND)</th>
@@ -99,6 +104,11 @@
 		                                                		</c:otherwise>
 		                                                	</c:choose>
 		                                                </td>
+		                                                <th class="d1">${objBill.email}</th>
+		                                                <th class="d1">${objBill.address}</th>
+		                                                <th class="d1">${objBill.phone}</th>
+		                                                <th class="d1">${objBill.deposits}</th>
+		                                                <th class="d1">${Integer.valueOf(objBill.rest_money)}</th>
 		                                                <td class="d1">${objBill.date_create}</td>
 		                                                <td class="d1">
 		                                                	<a href="${urlDetail}" title="Chi tiết">Chi tiết</a>
