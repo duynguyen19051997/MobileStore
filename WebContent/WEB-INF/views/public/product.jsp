@@ -70,42 +70,6 @@
 				</div>
 
 				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
-					
-					<!-- -->					
-					<div class="flex-sb-m flex-w p-b-35">
-						<div class="flex-w">
-							<div class="rs2-select2 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="productSorting">
-									<option value="0">Mặc định</option>
-									<option value="1">Phổ biến</option>
-									<option value="2">Giá: Từ thấp đến cao</option>
-									<option value="3">Giá: Từ cao đến thấp</option>
-								</select>
-							</div>
-
-							<div class="rs2-select2 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="productPrice">
-									<option value="0">Giá</option>
-									<option value="1">$0.00 - $50.00</option>
-									<option value="2">$50.00 - $100.00</option>
-									<option value="3">$100.00 - $150.00</option>
-									<option value="4">$150.00 - $200.00</option>
-									<option value="5">$200.00+</option>
-
-								</select>
-							</div>
-							
-							<div class="rs2-select2 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<button class="search-button"><a href="${pageContext.request.contextPath}/" title="Tìm kiếm">Tìm kiếm</a></button>
-							</div>
-							
-						</div>
-
-						<span class="s-text8 p-t-5 p-b-5">
-							Show ${Defines.ROW_COUNT_PUBLIC} of ${totalProduct} products
-						</span>
-					</div>
-					
 					<!-- Product -->
 					<div class="row">
 						<c:if test="${not empty listProPublic}">
